@@ -4,17 +4,17 @@ import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.Month;
 
-public class DataManager 
+public class DateTimeManager 
 {
 
 	private LocalDateTime time;
 
-	public DataManager() 
+	public DateTimeManager() 
 	{
 		this(LocalDateTime.now());
 	}
 
-	public DataManager(LocalDateTime now) 
+	public DateTimeManager(LocalDateTime now) 
 	{
 		this.time = now;
 	}
@@ -69,4 +69,25 @@ public class DataManager
 		return this.time.getNano();
 	}
 	
+	
+	/*
+	 * m: Minute
+	 * d: Day
+	 * w: Week Day
+	 * s: Second
+	 * n: Nano seconds
+	 * y: Year
+	 * Y: Day of the Year
+	 */
+	public String date(String s)
+	{
+		s = s.replaceAll("m", String.valueOf(time.getMinute()));
+		s = s.replaceAll("d", String.valueOf(time.getDayOfMonth()));
+		s = s.replaceAll("s", String.valueOf(time.getSecond()));
+		s = s.replaceAll("n", String.valueOf(time.getNano()));
+		s = s.replaceAll("w", String.valueOf(time.getDayOfWeek()));
+		s = s.replaceAll("y", String.valueOf(time.getYear()));
+		s = s.replaceAll("Y", String.valueOf(time.getDayOfYear()));
+		return s;
+	}
 }

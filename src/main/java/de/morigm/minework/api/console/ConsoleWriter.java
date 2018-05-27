@@ -15,4 +15,9 @@ public class ConsoleWriter
 		Bukkit.getConsoleSender().sendMessage(s);
 	}
 	
+	public static void dispatchCommand(String s)
+	{
+		Bukkit.dispatchCommand(Bukkit.getConsoleSender(), s);
+	}
+	
 }
