@@ -3,13 +3,17 @@ package de.morigm.minework.api;
 import java.time.LocalDateTime;
 
 import de.morigm.minework.Main;
+import de.morigm.minework.api.config.MineWorkConfig;
 import de.morigm.minework.api.manager.DateTimeManager;
 import de.morigm.minework.api.manager.MuteManager;
 import de.morigm.minework.other.PluginData;
+import lombok.Getter;
 
 public class MineWork 
 {
 
+	@Getter private MineWorkConfig mineWorkConfig = new MineWorkConfig();
+	
 	public static String getVersion()
 	{
 		return PluginData.getVersion();
