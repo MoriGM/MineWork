@@ -10,13 +10,14 @@ public class MineWorkConfig
 	
 	public String prefix;
 	public String chatblocktext;
+	public String playermuted;
 
 	public void loaddefault()
 	{
 		getConfig().options().copyDefaults(true);
 		getConfig().addDefault("prefix", PluginData.getPrefix());
 		getConfig().addDefault("chatblocktext", "This word is not allowed!");
-		getConfig().addDefault("worldmuted", "This World is muted!");
+		getConfig().addDefault("playermuted", "You are muted!");
 		getConfig().addDefault("worldmuted", "This World is muted!");
 		
 	}
@@ -25,11 +26,15 @@ public class MineWorkConfig
 	{
 		loaddefault();
 		this.prefix = getConfig().getString("prefix");
+		this.playermuted = getConfig().getString("playermuted");
 		this.chatblocktext = getConfig().getString("chatblocktext");
 	}
 	
 	public void save()
 	{
+		this.getConfig().set("prefix", prefix);
+		this.getConfig().set("playermuted", playermuted);
+		this.getConfig().set("chatblocktext", chatblocktext);
 		Main.getInstance().saveConfig();
 	}
 	

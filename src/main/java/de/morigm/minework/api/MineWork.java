@@ -30,4 +30,14 @@ public class MineWork
 		return Main.getInstance().getMuteManager();
 	}
 	
+	public static String getPrefix()
+	{
+		return Main.getInstance().getMineWorkConfig().prefix;
+	}
+	
+	public static void setPrefix(String prefix)
+	{
+		Main.getInstance().getMineWorkConfig().prefix = prefix;
+	}
+	
 }
