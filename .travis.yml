@@ -9,3 +9,4 @@ os:
 - windows
 - linux
 - osx
+sudo: false
