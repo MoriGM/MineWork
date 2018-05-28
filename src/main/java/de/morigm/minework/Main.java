@@ -7,25 +7,30 @@ import de.morigm.minework.api.manager.MuteManager;
 import de.morigm.minework.config.MineWorkConfig;
 import de.morigm.minework.config.MuteConfig;
 import de.morigm.minework.other.PluginData;
+import de.morigm.minework.other.PluginManager;
 import lombok.Getter;
 
 public class Main extends JavaPlugin
 {
 
 	@Getter private static Main instance;
-	@Getter private MuteManager mutemanager;
+	@Getter private MuteManager muteManager;
 	@Getter private MuteConfig muteConfig;
 	@Getter private MineWorkConfig mineWorkConfig;
+	@Getter private PluginManager pluginManager;
 	
 	@Override
 	public void onEnable() 
 	{
 		instance = this;
 		this.muteConfig = new MuteConfig();
-		this.mutemanager = new MuteManager();
+		this.muteManager = new MuteManager();
 		this.mineWorkConfig = new MineWorkConfig();
+		this.pluginManager = new PluginManager();
 		this.mineWorkConfig.load();
 		this.muteConfig.load();
+		this.pluginManager.registerCommands();
+		this.pluginManager.registerListeners();
 		ConsoleWriter.writeMessage(PluginData.getPrefix() + "Plugin is loaded");
 	}
 	

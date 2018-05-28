@@ -27,7 +27,7 @@ public class MineWork
 	
 	public static MuteManager getMuteManager()
 	{
-		return Main.getInstance().getMutemanager();
+		return Main.getInstance().getMuteManager();
 	}
 	
 }
