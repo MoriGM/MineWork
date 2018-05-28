@@ -11,6 +11,7 @@ public class MineWorkConfig
 	public String prefix;
 	public String chatblocktext;
 	public String playermuted;
+	public Object worldmuted;
 
 	public void loaddefault()
 	{
@@ -28,6 +29,7 @@ public class MineWorkConfig
 		this.prefix = getConfig().getString("prefix");
 		this.playermuted = getConfig().getString("playermuted");
 		this.chatblocktext = getConfig().getString("chatblocktext");
+		this.worldmuted = getConfig().get("worldmuted");
 	}
 	
 	public void save()
@@ -35,6 +37,7 @@ public class MineWorkConfig
 		this.getConfig().set("prefix", prefix);
 		this.getConfig().set("playermuted", playermuted);
 		this.getConfig().set("chatblocktext", chatblocktext);
+		this.getConfig().set("worldmuted", worldmuted);
 		Main.getInstance().saveConfig();
 	}
 	
