@@ -1,6 +1,6 @@
 name: MineWork
 version: 0.0.0
 
-main: de.morigm.Main
+main: de.morigm.minework.Main
 
 commands:
