@@ -20,6 +20,9 @@ public class MuteListenerTest
 	@Test
 	public void testPlayer()
 	{
+		if(!LoadMain.isRun())
+			LoadMain.on();
+		
 		System.out.println("Test MuteLister Player");
 		Player player = mock(Player.class);
 		when(player.getUniqueId()).thenReturn(UUID.fromString("ab047d5a-7a87-40c4-a869-41f061a9b0cd"));
@@ -42,6 +45,9 @@ public class MuteListenerTest
 	@Test
 	public void testMessage()
 	{
+		if(!LoadMain.isRun())
+			LoadMain.on();
+		
 		System.out.println("Test MuteLister Message");
 		Player player = mock(Player.class);
 		when(player.getUniqueId()).thenReturn(UUID.fromString("88a7b28c-ed0a-41fd-843d-47d513044b0b"));
@@ -63,6 +69,9 @@ public class MuteListenerTest
 	@Test
 	public void testWorld()
 	{
+		if(!LoadMain.isRun())
+			LoadMain.on();
+		
 		System.out.println("Test MuteLister World");
 		Player player = mock(Player.class);
 		when(player.getUniqueId()).thenReturn(UUID.fromString("88a7b28c-ed0a-41fd-843d-47d513044b0b"));

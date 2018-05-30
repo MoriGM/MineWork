@@ -17,6 +17,8 @@ public class MuteManagerTest
 	@Test
 	public void testadd() 
 	{
+		if(!LoadMain.isRun())
+			LoadMain.on();
 		System.out.println("Test MuteManger add");
 		Player p = mock(Player.class);
 		when(p.getUniqueId()).thenReturn(UUID.fromString("d1625507-0ea0-4833-9d4b-829244b43d2e"));
@@ -27,6 +29,8 @@ public class MuteManagerTest
 	@Test
 	public void testremove()
 	{
+		if(!LoadMain.isRun())
+			LoadMain.on();
 		System.out.println("Test MuteManger remove");
 		Player p = mock(Player.class);
 		when(p.getUniqueId()).thenReturn(UUID.fromString("d1625507-0ea0-4833-9d4b-829244b43d2e"));
