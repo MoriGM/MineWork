@@ -6,7 +6,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import de.morigm.minework.api.manager.MuteManager;
@@ -17,7 +17,7 @@ import de.morigm.minework.interfaces.IPluginTool;
 public class MainTest 
 {
 
-	@Before
+	@BeforeClass
 	public void on()
 	{
 		System.out.println("Test Main register");
