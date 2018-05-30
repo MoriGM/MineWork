@@ -31,17 +31,17 @@ public class MineWork
 	
 	public static MuteManager getMuteManager()
 	{
-		return Main.getInstance().getMuteManager();
+		return Main.getPluginTool().getMuteManager();
 	}
 	
 	public static String getPrefix()
 	{
-		return Main.getInstance().getMineWorkConfig().prefix;
+		return Main.getPluginTool().getMineWorkConfig().prefix;
 	}
 	
 	public static void setPrefix(String prefix)
 	{
-		Main.getInstance().getMineWorkConfig().prefix = prefix;
+		Main.getPluginTool().getMineWorkConfig().prefix = prefix;
 	}
 	
 }

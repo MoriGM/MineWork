@@ -3,42 +3,32 @@ package de.morigm.minework;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.morigm.minework.api.console.ConsoleWriter;
-import de.morigm.minework.api.manager.MuteManager;
-import de.morigm.minework.config.MineWorkConfig;
-import de.morigm.minework.config.MuteConfig;
+import de.morigm.minework.interfaces.IPluginTool;
 import de.morigm.minework.other.PluginData;
-import de.morigm.minework.other.PluginManager;
+import de.morigm.minework.other.PluginTool;
 import lombok.Getter;
+import lombok.Setter;
 
 public class Main extends JavaPlugin
 {
 
-	@Getter private static Main instance;
-	@Getter private MuteManager muteManager;
-	@Getter private MuteConfig muteConfig;
-	@Getter private MineWorkConfig mineWorkConfig;
-	@Getter private PluginManager pluginManager;
+	@Setter @Getter private static Main instance;
+	@Setter @Getter private static IPluginTool pluginTool;
+	
 	
 	@Override
 	public void onEnable() 
 	{
-		instance = this;
-		this.muteConfig = new MuteConfig();
-		this.muteManager = new MuteManager();
-		this.mineWorkConfig = new MineWorkConfig();
-		this.pluginManager = new PluginManager();
-		this.mineWorkConfig.load();
-		this.muteConfig.load();
-		this.pluginManager.registerCommands();
-		this.pluginManager.registerListeners();
+		Main.instance = this;
+		Main.pluginTool = new PluginTool();
+		Main.pluginTool.load();
 		ConsoleWriter.writeMessage(PluginData.getPrefix() + "Plugin is loaded");
 	}
 	
 	@Override
 	public void onDisable() 
 	{
-		this.mineWorkConfig.save();
-		this.muteConfig.save();
+		Main.pluginTool.save();
 		ConsoleWriter.writeMessage(PluginData.getPrefix() + "Plugin is stopped");
 	}
 	

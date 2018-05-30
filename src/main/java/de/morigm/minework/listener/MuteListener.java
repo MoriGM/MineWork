@@ -13,23 +13,23 @@ public class MuteListener implements ListenerHelper
 	public void on(AsyncPlayerChatEvent e)
 	{
 		boolean cancelled = false;
-		for(String s : Main.getInstance().getMuteConfig().words)
+		for(String s : Main.getPluginTool().getMuteConfig().words)
 			if(e.getMessage().contains(s))
 			{
 				cancelled = true;
-				e.getPlayer().sendMessage(MineWork.getPrefix() + Main.getInstance().getMineWorkConfig().chatblocktext);
+				e.getPlayer().sendMessage(MineWork.getPrefix() + Main.getPluginTool().getMineWorkConfig().chatblocktext);
 				break;
 			}
-		if(Main.getInstance().getMuteManager().containsPlayer(e.getPlayer()))
+		if(Main.getPluginTool().getMuteManager().containsPlayer(e.getPlayer()))
 		{
 			cancelled = true;
-			e.getPlayer().sendMessage(MineWork.getPrefix() + Main.getInstance().getMineWorkConfig().playermuted);
+			e.getPlayer().sendMessage(MineWork.getPrefix() + Main.getPluginTool().getMineWorkConfig().playermuted);
 		}
-		for(String s : Main.getInstance().getMuteConfig().worlds)
+		for(String s : Main.getPluginTool().getMuteConfig().worlds)
 			if(s.equalsIgnoreCase(e.getPlayer().getWorld().getName()))
 			{
 				cancelled = true;
-				e.getPlayer().sendMessage(MineWork.getPrefix() + Main.getInstance().getMineWorkConfig().playermuted);
+				e.getPlayer().sendMessage(MineWork.getPrefix() + Main.getPluginTool().getMineWorkConfig().playermuted);
 			}
 		e.setCancelled(cancelled);
 	}

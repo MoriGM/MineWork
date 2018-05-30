@@ -6,41 +6,41 @@ public class MineWorkConfig
 {
 		public String getPrefix()
 		{
-			return Main.getInstance().getMineWorkConfig().prefix;
+			return Main.getPluginTool().getMineWorkConfig().prefix;
 		}
 		
 		public void setPrefix(String prefix)
 		{
-			Main.getInstance().getMineWorkConfig().prefix = prefix;
+			Main.getPluginTool().getMineWorkConfig().prefix = prefix;
 		}
 		
 		public String getPlayerMuted()
 		{
-			return Main.getInstance().getMineWorkConfig().playermuted;
+			return Main.getPluginTool().getMineWorkConfig().playermuted;
 		}
 		
 		public void setPlayerMuted(String playermuted)
 		{
-			Main.getInstance().getMineWorkConfig().playermuted = playermuted;
+			Main.getPluginTool().getMineWorkConfig().playermuted = playermuted;
 		}
 		
 		public String getWordBlocked()
 		{
-			return Main.getInstance().getMineWorkConfig().chatblocktext;
+			return Main.getPluginTool().getMineWorkConfig().chatblocktext;
 		}
 		
 		public void setWordBlocked(String chatblocktext)
 		{
-			Main.getInstance().getMineWorkConfig().chatblocktext = chatblocktext;
+			Main.getPluginTool().getMineWorkConfig().chatblocktext = chatblocktext;
 		}
 		
 		public String getWorldMuted()
 		{
-			return Main.getInstance().getMineWorkConfig().worldmuted;
+			return Main.getPluginTool().getMineWorkConfig().worldmuted;
 		}
 		
 		public void setMineWorkConfig(String worldmuted)
 		{
-			Main.getInstance().getMineWorkConfig().worldmuted = worldmuted;
+			Main.getPluginTool().getMineWorkConfig().worldmuted = worldmuted;
 		}
 }

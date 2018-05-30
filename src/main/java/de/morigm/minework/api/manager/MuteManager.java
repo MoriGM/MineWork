@@ -10,52 +10,52 @@ public class MuteManager
 	
 	public void addPlayer(Player p)
 	{
-		if(!Main.getInstance().getMuteConfig().player.contains(p.getUniqueId().toString()))
-			Main.getInstance().getMuteConfig().player.add(p.getUniqueId().toString());
+		if(!Main.getPluginTool().getMuteConfig().player.contains(p.getUniqueId().toString()))
+			Main.getPluginTool().getMuteConfig().player.add(p.getUniqueId().toString());
 	}
 	
 	public void removePlayer(Player p)
 	{
-		if(Main.getInstance().getMuteConfig().player.contains(p.getUniqueId().toString()))
-			Main.getInstance().getMuteConfig().player.remove(p.getUniqueId().toString());
+		if(Main.getPluginTool().getMuteConfig().player.contains(p.getUniqueId().toString()))
+			Main.getPluginTool().getMuteConfig().player.remove(p.getUniqueId().toString());
 	}
 	
 	public boolean containsPlayer(Player p)
 	{
-		return Main.getInstance().getMuteConfig().player.contains(p.getUniqueId().toString());
+		return Main.getPluginTool().getMuteConfig().player.contains(p.getUniqueId().toString());
 	}
 	
 	public void addWorld(World w)
 	{
-		if(!Main.getInstance().getMuteConfig().worlds.contains(w.getName()))
-			Main.getInstance().getMuteConfig().worlds.add(w.getName());
+		if(!Main.getPluginTool().getMuteConfig().worlds.contains(w.getName()))
+			Main.getPluginTool().getMuteConfig().worlds.add(w.getName());
 	}
 	
 	public void removeWorld(World w)
 	{
-		if(Main.getInstance().getMuteConfig().worlds.contains(w.getName()))
-			Main.getInstance().getMuteConfig().worlds.remove(w.getName());
+		if(Main.getPluginTool().getMuteConfig().worlds.contains(w.getName()))
+			Main.getPluginTool().getMuteConfig().worlds.remove(w.getName());
 	}
 	
 	public boolean containsWord(World w)
 	{
-		return Main.getInstance().getMuteConfig().worlds.contains(w.getName());
+		return Main.getPluginTool().getMuteConfig().worlds.contains(w.getName());
 	}
 	
 	public void addWord(String s)
 	{
-		if(!Main.getInstance().getMuteConfig().player.contains(s))
-			Main.getInstance().getMuteConfig().player.add(s);
+		if(!Main.getPluginTool().getMuteConfig().player.contains(s))
+			Main.getPluginTool().getMuteConfig().player.add(s);
 	}
 	
 	public void removeWord(String s)
 	{
-		if(Main.getInstance().getMuteConfig().words.contains(s))
-			Main.getInstance().getMuteConfig().words.remove(s);
+		if(Main.getPluginTool().getMuteConfig().words.contains(s))
+			Main.getPluginTool().getMuteConfig().words.remove(s);
 	}
 	
 	public boolean containsWord(String s)
 	{
-		return Main.getInstance().getMuteConfig().words.contains(s);
+		return Main.getPluginTool().getMuteConfig().words.contains(s);
 	}
 }
